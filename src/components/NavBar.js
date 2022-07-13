@@ -65,6 +65,19 @@ const NavBar = () => {
                   </NavLink>
                 </NavItem>
               )}
+              {/* arengu link */}
+              {/* {isAuthenticated && (
+                <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to="/arengu"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    Arengu
+                  </NavLink>
+                </NavItem>
+              )} */}
               {/* find a doctor */}
               <NavItem>
                   <NavLink
@@ -113,7 +126,7 @@ const NavBar = () => {
                     Careers
                   </NavLink>
                 </NavItem>
-      
+            
             </Nav>
             
             <Nav className="d-none d-md-block" navbar>

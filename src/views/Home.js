@@ -6,7 +6,8 @@ import Hero from "../components/Hero";
 const Home = () => (
   <Fragment>
     <Hero />
-    <hr />
+    {/* insert HTML elements here */}
+    {/* <hr/> */}
   </Fragment>
 );
 
