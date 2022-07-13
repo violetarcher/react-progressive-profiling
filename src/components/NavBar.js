@@ -65,7 +65,57 @@ const NavBar = () => {
                   </NavLink>
                 </NavItem>
               )}
+              {/* find a doctor */}
+              <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to={{pathname: "https://doctors.lifebridgehealth.org/"}} 
+                    target="_blank"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    Find A Doctor
+                  </NavLink>
+                </NavItem>
+              {/* Services*/}
+              <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to={{pathname: "https://www.lifebridgehealth.org/Main/MedicalServices1.aspx"}} 
+                    target="_blank"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    Services
+                  </NavLink>
+                </NavItem>
+              {/* Giving */}
+              <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to={{pathname: "https://www.lifebridgehealth.org/Development/Development.aspx"}} 
+                    target="_blank"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    Giving
+                  </NavLink>
+                </NavItem>
+              {/* Careers */}
+              <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to={{pathname: "https://www.lifebridgehealth.org/LifeJobs/LifeJobs.aspx"}} 
+                    target="_blank"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    Careers
+                  </NavLink>
+                </NavItem>
+      
             </Nav>
+            
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>

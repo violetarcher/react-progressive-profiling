@@ -28,7 +28,7 @@ export const ProfileComponent = () => {
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
       </Row>
       {/* placeholder for Arengu form input */}
-      <ArenguFormInput />
+      {/* <ArenguFormInput /> */}
     </Container>
   );
 };

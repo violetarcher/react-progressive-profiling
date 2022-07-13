@@ -56,3 +56,18 @@
   font-size: 2rem;
   padding-left: 2%;
 }
+
+.navbar-nav .nav-link {
+  color: #041433;
+  padding: 0 0 0.5rem 0;
+  box-sizing: border-box;
+  margin: 0 1em 0 0;
+  font-weight: 400;
+}
+
+.bottom-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
