@@ -1,40 +1,47 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
-
-import Highlight from "../components/Highlight";
-import Loading from "../components/Loading";
+import React, { useEffect, useState }  from "react";
 import { useAuth0,  withAuthenticationRequired } from "@auth0/auth0-react";
+
+import { Container, Row, Col } from "reactstrap";
+// import Highlight from 'react-highlight'
+import Loading from "../components/Loading";
 
 
 export const ProfileComponent = () => {
-  const { user } = useAuth0();
+  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const [userMetadata, setUserMetadata] = useState(null);
+   
+   
+   useEffect(() => {
+  const getUserMetadata = async () => {
+    const domain = "archfaktor.us.auth0.com";
 
-  var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer xxx");
+    try {
+      const accessToken = await getAccessTokenSilently({
+        audience: `https://${domain}/api/v2/`,
+        scope: "read:current_user",
+      });
 
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+      const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+
+      const metadataResponse = await fetch(userDetailsByIdUrl, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      const { user_metadata } = await metadataResponse.json();
+
+      setUserMetadata(user_metadata);
+    } catch (e) {
+      console.log(e.message);
+    }
   };
 
-  fetch("https://archfaktor.us.auth0.com/api/v2/users/auth0|62cf40705f61ec7a57a3dff3", requestOptions)
-    .then(response => response.text())
-    .then(result => {
-      // console.log(result)
-      const user_profile = JSON.parse(result);
-      const user_metadata = result.user_metadata;
-      console.log(user_metadata);
-      console.log(user_profile);
-
-      return user_metadata;
-      })
-    .catch(error => console.log('error', error));
-    
-    console.log(user.user_metadata);
-
+  getUserMetadata();
+}, [getAccessTokenSilently, user?.sub]);
 
   return (
+    isAuthenticated && (
     <Container className="mb-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md={2}>
@@ -50,17 +57,32 @@ export const ProfileComponent = () => {
         </Col>
       </Row>
       
-      {/* <Row>
-      <Col md>
-          <p className="">{JSON.stringify(user.user_profile, null, 2)}</p>
-        </Col>
-      </Row> */}
-       
+      <Row>
+        <mark>
+        <div>
+          <h3>User Metadata</h3>
+          {userMetadata ? (
+            <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
+          ) : (
+            "No user metadata defined"
+          )}
+        </div>
+        </mark>
+      </Row>
+          
+      <br></br>
       
       <Row>
-        <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
+        <mark>
+         <div>
+          <h3>ID Token</h3>
+          <pre>{JSON.stringify(user, null, 2)}</pre>
+          </div> 
+        </mark>
       </Row>
+
     </Container>
+    )  
   );
 };
 
