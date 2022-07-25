@@ -10,7 +10,7 @@ export const ProfileComponent = () => {
   const { user } = useAuth0();
 
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer {fill in with fresh bearer}");
+  myHeaders.append("Authorization", "Bearer xxx");
 
   var requestOptions = {
     method: 'GET',
@@ -26,10 +26,12 @@ export const ProfileComponent = () => {
       const user_metadata = result.user_metadata;
       console.log(user_metadata);
       console.log(user_profile);
+
+      return user_metadata;
       })
     .catch(error => console.log('error', error));
     
-    // console.log(requestOptions.user_profile);
+    console.log(user.user_metadata);
 
 
   return (
@@ -48,11 +50,11 @@ export const ProfileComponent = () => {
         </Col>
       </Row>
       
-      <Row>
+      {/* <Row>
       <Col md>
-          <p className="">{user.user_profile}TEXT</p>
+          <p className="">{JSON.stringify(user.user_profile, null, 2)}</p>
         </Col>
-      </Row>
+      </Row> */}
        
       
       <Row>

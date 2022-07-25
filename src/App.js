@@ -11,6 +11,8 @@ import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import Content from "./components/Content";
+import Protected from "./views/Protected"
+import PrivateRoute from "./components/Private-route";
 // import ArenguForm from "./components/ArenguForm";
 
 // styles
@@ -40,7 +42,7 @@ const App = () => {
               <Route path="/" exact component={Home} />
               <Route path="/profile" component={Profile} />
               <Route path="/external-api" component={ExternalApi} />
-              {/* <Route path="/arengu" component={ArenguForm} /> */}
+              <PrivateRoute path="/protected" component={Protected} />
             </Switch>
           </Container>
         <Content />

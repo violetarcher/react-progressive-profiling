@@ -126,6 +126,16 @@ const NavBar = () => {
                     <span className="navarrow">{">"}</span> Careers
                   </NavLink>
                 </NavItem>
+               
+             
+                <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to= "/protected" 
+                    activeClassName="router-link-exact-active">
+                    <span className="navarrow">{">"}</span> Protected
+                  </NavLink>
+                </NavItem>
             
             </Nav>
             
@@ -182,6 +192,7 @@ const NavBar = () => {
                     block
                     onClick={() => loginWithRedirect({})}
                   >
+
                     Log in
                   </Button>
                 </NavItem>
