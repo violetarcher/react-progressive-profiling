@@ -12,7 +12,7 @@ export const ProfileComponent = () => {
    
    
    useEffect(() => {
-  const getUserMetadata = async () => {
+    const getUserMetadata = async () => {
     const domain = "archfaktor.us.auth0.com";
 
     try {
@@ -41,7 +41,7 @@ export const ProfileComponent = () => {
 }, [getAccessTokenSilently, user?.sub]);
 
   return (
-    isAuthenticated && (
+ 
     <Container className="mb-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md={2}>
@@ -82,7 +82,6 @@ export const ProfileComponent = () => {
       </Row>
 
     </Container>
-    )  
   );
 };
 
