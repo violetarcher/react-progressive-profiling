@@ -62,7 +62,9 @@
   padding: 0 0 0.5rem 0;
   box-sizing: border-box;
   margin: 0 4em 0 0;
-  font-weight: 400;
+  font-weight: bold;
+  font-size: 0.9rem;
+  
 }
 
 .container {
@@ -73,4 +75,12 @@
   display: flex;
   flex-direction: column;
   margin-left: 25rem;
+}
+
+.navarrow {
+  color: #E76F34;
+  font-size: 1em;
+  font-weight: 1500;
+  position: relative;
+  padding-bottom: 100px;
 }

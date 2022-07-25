@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => (
   <div className="text-center my-5">
-    <img className="mb-3" id="hero-background" src="https://i.ibb.co/VqfS6qK/1440x300-banner-lbh-home-page-banner-image.jpg" alt="heathcare-truck" width="120" />
+    <img className="mb-3" id="hero-background" src="https://i.ibb.co/RvcQ1rc/Screen-Shot-2022-07-25-at-10-34-35-AM.png" alt="heathcare-truck" width="120" />
     <h1 className="mb-4">COVID-19
       Walk-ins are now welcome.
 

@@ -8,11 +8,9 @@ import { useAuth0,  withAuthenticationRequired } from "@auth0/auth0-react";
 
 export const ProfileComponent = () => {
   const { user } = useAuth0();
-  const {first_name} = user;
-  console.log(first_name);
 
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer ");
+  myHeaders.append("Authorization", "Bearer {fill in with fresh bearer}");
 
   var requestOptions = {
     method: 'GET',
@@ -31,7 +29,7 @@ export const ProfileComponent = () => {
       })
     .catch(error => console.log('error', error));
     
-    console.log(requestOptions.user_metadata);
+    // console.log(requestOptions.user_profile);
 
 
   return (
@@ -52,15 +50,10 @@ export const ProfileComponent = () => {
       
       <Row>
       <Col md>
-          <p className="">{requestOptions}TEXT</p>
+          <p className="">{user.user_profile}TEXT</p>
         </Col>
       </Row>
        
-  
-        {/* <Row>
-        <Highlight>{JSON.stringify(user.user_metadata, null, 2)}</Highlight>
-      </Row> */}
-   
       
       <Row>
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
