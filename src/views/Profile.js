@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 
 
 export const ProfileComponent = () => {
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
    
    
