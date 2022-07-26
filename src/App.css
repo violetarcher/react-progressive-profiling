@@ -35,9 +35,12 @@
 }
 
 .logo {
-  background-image: url("https://i.ibb.co/pbQxt6C/logo-white-1x.png");
-  width: 17em;
-  height: 3em;
+  /* background-image: url("https://i.ibb.co/pbQxt6C/logo-white-1x.png"); */
+  /* background-image: url("https://i.ibb.co/KsNbzvC/22905-6-health-file.png"); */
+  background-image: url("https://i.ibb.co/jzWBgLN/WHGlogoweb-png-copy.png");
+ 
+  width: 3em;
+  height: 6em;
 }
 
 #hero-background {
@@ -67,7 +70,7 @@
 }
 
 .container {
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .api-container {
@@ -93,4 +96,32 @@ mark {
 
 pre {
   color:  #E6DB74;
+}
+
+.text-center .container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-filler {
+  display: block;
+  width: 100%;
+  margin: 2% 0 2% 0;
+}
+
+.mt-5 {
+  margin: 0;
+  padding: 0;
+  padding-top: 0;
+}
+
+.nav-container-items {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20%;
+}
+
+.container {
+  width: 80%;
 }

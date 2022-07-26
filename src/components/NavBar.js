@@ -38,7 +38,7 @@ const NavBar = () => {
   return (
     <div className="nav-container">
       <Navbar color="light" light expand="md">
-        <Container>
+        <Container class="nav-container-items">
           <NavbarBrand className="logo" />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>

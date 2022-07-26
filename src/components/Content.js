@@ -9,7 +9,7 @@ class Content extends Component {
   render() {
     return (
         <div className="bottom-image">
-          <img className="bottom-image-id" src="https://i.ibb.co/HdHmtS8/Screen-Shot-2022-07-13-at-5-02-36-PM.png" alt="Screen-Shot-2022-07-13-at-5-02-36-PM"></img>
+          {/* <img className="bottom-image-id" src="https://i.ibb.co/HdHmtS8/Screen-Shot-2022-07-13-at-5-02-36-PM.png" alt="Screen-Shot-2022-07-13-at-5-02-36-PM"></img> */}
         </div>
     );
   }
