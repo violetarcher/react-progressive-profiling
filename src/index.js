@@ -28,7 +28,6 @@ const providerConfig = {
 ReactDOM.render(
   <Auth0Provider {...providerConfig}
     scope="read:current_user"
-    audience="https://archfaktor.us.auth0.com/api/v2/"
     >
     
     <App />
