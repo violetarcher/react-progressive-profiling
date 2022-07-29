@@ -64,7 +64,6 @@ export const ProfileComponent = () => {
          <div >
           <h3>ID Token</h3>
           <pre>{JSON.stringify(user, null, 2)}</pre>
-          <pre>{JSON.stringify(user.custom_claims, null, 2)}</pre>
           </div> 
         </mark>
       </Row>
