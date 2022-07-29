@@ -14,7 +14,7 @@ export const ProfileComponent = () => {
    useEffect(() => {
     const getUserMetadata = async () => {
     const domain = "archfaktor.us.auth0.com";
-
+    
     try {
       const accessToken = await getAccessTokenSilently({
         audience: `https://${domain}/api/v2/`,
@@ -56,7 +56,21 @@ export const ProfileComponent = () => {
           <p className="lead text-muted">{user.email}</p>
         </Col>
       </Row>
+    
+    <div className="container-claims">
       
+      <Row>
+        <mark>
+         <div >
+          <h3>ID Token</h3>
+          <pre>{JSON.stringify(user, null, 2)}</pre>
+          <pre>{JSON.stringify(user.custom_claims, null, 2)}</pre>
+          </div> 
+        </mark>
+      </Row>
+
+      <br></br>
+
       <Row>
         <mark>
         <div>
@@ -70,17 +84,7 @@ export const ProfileComponent = () => {
         </mark>
       </Row>
           
-      <br></br>
-      
-      <Row>
-        <mark>
-         <div>
-          <h3>ID Token</h3>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
-          </div> 
-        </mark>
-      </Row>
-
+    </div>
     </Container>
   );
 };
@@ -88,3 +92,4 @@ export const ProfileComponent = () => {
 export default withAuthenticationRequired(ProfileComponent, {
   onRedirecting: () => <Loading />,
 });
+
