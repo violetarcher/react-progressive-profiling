@@ -27,8 +27,12 @@ const providerConfig = {
 
 ReactDOM.render(
   <Auth0Provider {...providerConfig}
+  // when the audience is set, then the API call works in the Profile view, but the API call externally will not work. (vise-versa)
+  // if the audience is not set, the API call works but console error returns "consent required" for grabbing ther user_metada
+    audience="https://reactprogressiveprofile/api"
     scope="read:current_user"
     >
+    
     
     <App />
   </Auth0Provider>,
