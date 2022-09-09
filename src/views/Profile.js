@@ -70,7 +70,8 @@ export const ProfileComponent = () => {
 
       <br></br>
 
-      <Row>
+{/* uncomment to render user Metadata from silend API call, must also uncommend issuer and scope in index.js */}
+      {/* <Row>
         <mark>
         <div>
           <h3>User Metadata</h3>
@@ -81,7 +82,7 @@ export const ProfileComponent = () => {
           )}
         </div>
         </mark>
-      </Row>
+      </Row> */}
           
     </div>
     </Container>
