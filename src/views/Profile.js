@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 
 
 export const ProfileComponent = () => {
-  const { user, getAccessTokenSilently } = useAuth0();
+  const { user, accessToken, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
    
    
@@ -36,7 +36,7 @@ export const ProfileComponent = () => {
       console.log(e.message);
     }
   };
-
+  
   getUserMetadata();
 }, [getAccessTokenSilently, user?.sub]);
 
@@ -67,6 +67,17 @@ export const ProfileComponent = () => {
           </div> 
         </mark>
       </Row>
+
+      <br></br>
+
+      {/* <Row>
+        <mark>
+         <div >
+          <h3>Access Token</h3>
+          <pre>{JSON.stringify(accessToken, null, 2)}</pre>
+          </div> 
+        </mark>
+      </Row> */}
 
       <br></br>
 
