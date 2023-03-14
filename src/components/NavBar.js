@@ -65,6 +65,19 @@ const NavBar = () => {
                   </NavLink>
                 </NavItem>
               )}
+            {/* Private-scoped API */}
+              {isAuthenticated && (
+                <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to="/scoped-api"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    <span className="navarrow">{">"}</span> Scoped API
+                  </NavLink>
+                </NavItem>
+              )}
               {/* arengu link */}
               {/* {isAuthenticated && (
                 <NavItem>

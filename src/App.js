@@ -15,11 +15,13 @@ import Protected from "./views/Protected"
 import PrivateRoute from "./components/Private-route";
 // import ArenguForm from "./components/ArenguForm";
 
+
 // styles
 import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+import ProtectedApi from "./views/ProtectedApi";
 initFontAwesome();
 
 const App = () => {
@@ -43,6 +45,7 @@ const App = () => {
               <Route path="/" exact component={Home} />
               <Route path="/profile" component={Profile} />
               <Route path="/external-api" component={ExternalApi} />
+              <Route path="/scoped-api" component={ProtectedApi} />
               <PrivateRoute path="/protected" component={Protected} />
             </Switch>
           </Container>

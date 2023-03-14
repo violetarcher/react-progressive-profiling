@@ -4,10 +4,9 @@ import Highlight from "../components/Highlight";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { getConfig } from "../config";
 import Loading from "../components/Loading";
-import { NavLink as RouterNavLink } from "react-router-dom";
 
 export const ExternalApiComponent = () => {
-  const { apiOrigin = "http://localhost:3001", audience } = getConfig();
+  const { apiOrigin = "http://localhost:3010", audience } = getConfig();
 
   const [state, setState] = useState({
     showResult: false,
@@ -59,7 +58,7 @@ export const ExternalApiComponent = () => {
     try {
       const token = await getAccessTokenSilently();
 
-      const response = await fetch(`${apiOrigin}/api/external`, {
+      const response = await fetch(`${apiOrigin}/api/private-scoped`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,8 +83,6 @@ export const ExternalApiComponent = () => {
     e.preventDefault();
     fn();
   };
-
-  const accessToken = localStorage.getItem('token')
 
   return (
     <>
@@ -117,9 +114,9 @@ export const ExternalApiComponent = () => {
             </Alert>
           )}
 
-          <h1>External API</h1>
+          <h1>Scoped API</h1>
           <p className="lead">
-            Ping an external API by clicking the button below.
+            Ping a scoped API by clicking the button below.
           </p>
 
           {/* <p>
@@ -182,18 +179,6 @@ export const ExternalApiComponent = () => {
             disabled={!audience}
           >
             Ping API
-          </Button>
-          <br></br>
-          
-          <Button
-            tag={RouterNavLink}
-            
-            to={{pathname: `https://jwt.io/?token=" + ${accessToken}`}} 
-            target="_blank"
-            exact
-            activeClassName="router-link-exact-active"
-          >
-            View Access Token
           </Button>
         </div>
 
