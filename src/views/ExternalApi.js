@@ -181,7 +181,7 @@ export const ExternalApiComponent = () => {
             onClick={callApi}
             disabled={!audience}
           >
-            Ping API
+            Call API
           </Button>
           <br></br>
           

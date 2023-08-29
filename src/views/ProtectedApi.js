@@ -116,7 +116,7 @@ export const ExternalApiComponent = () => {
 
           <h1>Scoped API</h1>
           <p className="lead">
-            Ping a scoped API by clicking the button below.
+            Call a scoped API by clicking the button below.
           </p>
 
           {/* <p>
@@ -178,7 +178,7 @@ export const ExternalApiComponent = () => {
             onClick={callApi}
             disabled={!audience}
           >
-            Ping API
+            Call API
           </Button>
         </div>
 

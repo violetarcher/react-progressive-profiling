@@ -15,6 +15,19 @@ export function getConfig() {
   return {
     domain: configJson.domain,
     clientId: configJson.clientId,
+    // connection: "email",
     ...(audience ? { audience } : null),
   };
 }
+
+// auth0 = await createAuth0Client({
+//   domain: config.domain,
+//   client_id: config.clientId,
+//   connection: "email"
+// });
+
+// auth0 = await createAuth0Client({
+//   domain: config.domain,
+//   client_id: config.clientId,
+//   connection: "sms"
+// });
