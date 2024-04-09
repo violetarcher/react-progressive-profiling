@@ -37,9 +37,10 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
+      
       <Navbar color="light" light expand="md">
         <Container class="nav-container-items">
-          <NavbarBrand className="logo" />
+          {/* <NavbarBrand className="logo" /> */}
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -95,7 +96,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://doctors.lifebridgehealth.org/"}} 
+                    to={{pathname: "https://amtrustfinancial.com/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
@@ -107,7 +108,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://www.lifebridgehealth.org/Main/MedicalServices1.aspx"}} 
+                    to={{pathname: "https://amtrustfinancial.com/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
@@ -119,7 +120,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://www.lifebridgehealth.org/Development/Development.aspx"}} 
+                    to={{pathname: "https://amtrustfinancial.com/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
@@ -131,7 +132,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://www.lifebridgehealth.org/LifeJobs/LifeJobs.aspx"}} 
+                    to={{pathname: "https://amtrustfinancial.com/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"

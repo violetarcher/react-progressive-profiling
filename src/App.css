@@ -34,13 +34,11 @@
   opacity: 1;
 }
 
-.logo {
-  /* background-image: url("https://i.ibb.co/pbQxt6C/logo-white-1x.png"); */
-  /* background-image: url("https://i.ibb.co/KsNbzvC/22905-6-health-file.png"); */
-  background-image: url("https://auth0images.s3.us-east-2.amazonaws.com/amtrust-financial-logo-vector.png");
- 
-  width: 3em;
-  height: 6em;
+.logo-image{
+  /* background-image: url("https://auth0images.s3.us-east-2.amazonaws.com/amtrust-financial-logo-vector.png"); */
+  width: 20rem;
+  height: auto;
+  padding: 2rem;
 }
 
 #hero-background {
@@ -60,13 +58,29 @@
   padding-left: 2%;
 }
 
+.navbar {
+  padding-left: 30%;
+  padding-right: 30%;
+  box-shadow: none;
+}
+
+.bg-light {
+  background-color: white !important;
+}
+
 .navbar-nav .nav-link {
   color: #041433;
-  padding: 0 0 0.5rem 0;
+  padding: 0 0 rem 0;
   box-sizing: border-box;
-  /* margin: 0 4em 0 0; */
+  margin: 0 4em 0 0;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: rem;
+  width: 100%;
+}
+
+.navbar .router-link-exact-active {
+  color: #041433;
+  border-bottom: 3px transparent #0066f9;
 }
 
 .container {
@@ -81,7 +95,7 @@
 
 .navarrow {
   color: #E76F34;
-  font-size: 1em;
+  font-size: 0em;
   font-weight: 1500;
   position: relative;
   padding-bottom: 100px;
@@ -109,6 +123,11 @@ pre {
   padding-top: 0;
 }
 
+.btn-primary {
+  background-color: rgb(13, 116, 23);
+  border-radius: 5%;
+}
+
 .nav-container-items {
   display: flex;
   flex-direction: row;
@@ -116,9 +135,10 @@ pre {
 }
 
 .container {
-  width: 80%;
+  padding: 0;
   height: auto;
 }
+
 
 h1 {
   padding-top: 2em;
