@@ -37,7 +37,7 @@
 .logo {
   /* background-image: url("https://i.ibb.co/pbQxt6C/logo-white-1x.png"); */
   /* background-image: url("https://i.ibb.co/KsNbzvC/22905-6-health-file.png"); */
-  background-image: url("https://i.ibb.co/jzWBgLN/WHGlogoweb-png-copy.png");
+  background-image: url("https://auth0images.s3.us-east-2.amazonaws.com/amtrust-financial-logo-vector.png");
  
   width: 3em;
   height: 6em;
@@ -100,7 +100,7 @@ pre {
 .hero-filler {
   display: block;
   width: 100%;
-  margin: 2% 0 2% 0;
+  /* margin: 2% 0 2% 0; */
 }
 
 .mt-5 {

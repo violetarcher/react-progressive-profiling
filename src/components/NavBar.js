@@ -50,7 +50,7 @@ const NavBar = () => {
                   exact
                   activeClassName="router-link-exact-active"
                 >
-                  <span className="navarrow">{">"}</span> Home
+                  <span className="navarrow">{">"}</span> Solutions
                 </NavLink>
               </NavItem>
               {isAuthenticated && (
@@ -100,7 +100,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Find A Doctor
+                    <span className="navarrow">{">"}</span> Claims
                   </NavLink>
                 </NavItem>
               {/* Services*/}
@@ -112,7 +112,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Services
+                    <span className="navarrow">{">"}</span> Industries
                   </NavLink>
                 </NavItem>
               {/* Giving */}
@@ -124,7 +124,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Giving
+                    <span className="navarrow">{">"}</span> Services
                   </NavLink>
                 </NavItem>
               {/* Careers */}
@@ -136,7 +136,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Careers
+                    <span className="navarrow">{">"}</span> Company
                   </NavLink>
                 </NavItem>
                
