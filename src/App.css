@@ -1,3 +1,6 @@
+.footerImage {
+  max-width: 100%;
+}
 .next-steps .fa-link {
   margin-right: 5px;
 }
@@ -59,8 +62,8 @@
 }
 
 .navbar {
-  padding-left: 30%;
-  padding-right: 30%;
+  padding-left: 20%;
+  padding-right: 20%;
   box-shadow: none;
 }
 
@@ -76,6 +79,15 @@
   font-weight: bold;
   font-size: rem;
   width: 100%;
+}
+
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -ms-flex-positive: 1;
+  flex-grow: 0.2;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .navbar .router-link-exact-active {
@@ -139,16 +151,20 @@ pre {
   height: auto;
 }
 
+.p-3 {
+  padding: 0 !important;
+}
+
 
 h1 {
   padding-top: 2em;
   padding-bottom: 2em;
+  margin-left: 20%;
 }
 
-/* .container-claims {
-  display: inline-flex;
-  flex-direction: row;
-} */
+.mb-5{
+  margin: 10rem;
+}
 
 mark {
   background-color: #272822;
