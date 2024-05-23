@@ -185,7 +185,7 @@ export const ExternalApiComponent = () => {
           </Button>
           <br></br>
           
-          <Button
+          {/* <Button
             tag={RouterNavLink}
             
             to={{pathname: `https://jwt.io/?token=" + ${accessToken}`}} 
@@ -194,7 +194,7 @@ export const ExternalApiComponent = () => {
             activeClassName="router-link-exact-active"
           >
             View Access Token
-          </Button>
+          </Button> */}
         </div>
 
         <div className="result-block-container">
