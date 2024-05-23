@@ -1,1 +1,1 @@
-React App with Auth0 authentication and Arengu progressive profiling
+React App integrated with CIC (Auth0)

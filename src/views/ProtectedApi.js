@@ -60,7 +60,7 @@ export const ExternalApiComponent = () => {
 
       const response = await fetch(`${apiOrigin}/api/private-scoped`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`
         },
       });
 
