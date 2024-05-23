@@ -7,8 +7,8 @@ import Loading from "../components/Loading";
 
 
 export const ProfileComponent = () => {
-  const { user, accessToken, getAccessTokenSilently } = useAuth0();
-  const [userMetadata, setUserMetadata] = useState(null);
+  const { user, getAccessTokenSilently } = useAuth0();
+  const [setUserMetadata] = useState(null);
    
    
    useEffect(() => {
@@ -18,7 +18,8 @@ export const ProfileComponent = () => {
     try {
       const accessToken = await getAccessTokenSilently({
         audience: `https://${domain}/api/v2/`,
-        scope: "read:current_user",
+        scope: "read:current_user", 
+        // acr_values: 'http://schemas.openid.net/pape/policies/2007/06/multi-factor',
       });
 
       const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;

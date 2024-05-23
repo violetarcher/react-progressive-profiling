@@ -39,8 +39,8 @@
 
 .logo-image{
   /* background-image: url("https://auth0images.s3.us-east-2.amazonaws.com/amtrust-financial-logo-vector.png"); */
-  width: 20rem;
-  height: auto;
+  width: 8rem;
+  /* height: auto; */
   padding: 2rem;
 }
 

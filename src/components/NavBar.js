@@ -51,7 +51,7 @@ const NavBar = () => {
                   exact
                   activeClassName="router-link-exact-active"
                 >
-                  <span className="navarrow">{">"}</span> Solutions
+                  <span className="navarrow">{">"}</span> About Us
                 </NavLink>
               </NavItem>
               {isAuthenticated && (
@@ -101,7 +101,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Claims
+                    <span className="navarrow">{">"}</span> Services
                   </NavLink>
                 </NavItem>
               {/* Services*/}
@@ -113,7 +113,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Industries
+                    <span className="navarrow">{">"}</span> Pricing
                   </NavLink>
                 </NavItem>
               {/* Giving */}
@@ -125,7 +125,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Services
+                    <span className="navarrow">{">"}</span> Scheduling
                   </NavLink>
                 </NavItem>
               {/* Careers */}
@@ -137,7 +137,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Company
+                    <span className="navarrow">{">"}</span> Customers
                   </NavLink>
                 </NavItem>
                

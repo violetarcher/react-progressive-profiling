@@ -3,9 +3,9 @@ import React from "react";
 
 const Hero = () => (
   // <div className="text-center my-5">
-  <div className="">
+  <div className="heroimage">
     {/* <img className="mb-3" id="hero-background" src="https://i.ibb.co/RvcQ1rc/Screen-Shot-2022-07-25-at-10-34-35-AM.png" alt="heathcare-truck" width="120" /> */}
-    <img class="hero-filler" src="https://auth0images.s3.us-east-2.amazonaws.com/amtrust+site.png" alt="Screen-Shot-2022-07-26-at-3-11-06-PM" width="100%" />
+    <img class="hero-filler" src="https://auth0images.s3.us-east-2.amazonaws.com/React+Design+Landing+Image" alt="Screen-Shot-2022-07-26-at-3-11-06-PM" width="100%" />
     {/* <h1 className="mb-4">COVID-19
       Walk-ins are now welcome.
 
