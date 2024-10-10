@@ -96,7 +96,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://amtrustfinancial.com/"}} 
+                    to={{pathname: "http://localhost:3000/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
@@ -108,7 +108,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://amtrustfinancial.com/"}} 
+                    to={{pathname: "http://localhost:3000/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
@@ -120,7 +120,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://amtrustfinancial.com/"}} 
+                    to={{pathname: "http://localhost:3000/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
@@ -132,7 +132,7 @@ const NavBar = () => {
               <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to={{pathname: "https://amtrustfinancial.com/"}} 
+                    to={{pathname: "http://localhost:3000/"}} 
                     target="_blank"
                     exact
                     activeClassName="router-link-exact-active"
