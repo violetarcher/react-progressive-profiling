@@ -39,7 +39,7 @@ export const ProfileComponent = () => {
   };
   
   getUserMetadata();
-}, [getAccessTokenSilently, user?.sub]);
+}, [getAccessTokenSilently, setUserMetadata, user.sub]);
 
   return (
  

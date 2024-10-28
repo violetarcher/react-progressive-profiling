@@ -7,7 +7,7 @@ import {
   Container,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -117,7 +117,7 @@ const NavBar = () => {
                   </NavLink>
                 </NavItem>
               {/* Giving */}
-              <NavItem>
+              {/* <NavItem>
                   <NavLink
                     tag={RouterNavLink}
                     to={{pathname: "http://localhost:3000/"}} 
@@ -127,7 +127,7 @@ const NavBar = () => {
                   >
                     <span className="navarrow">{">"}</span> Scheduling
                   </NavLink>
-                </NavItem>
+                </NavItem> */}
               {/* Careers */}
               <NavItem>
                   <NavLink
@@ -148,6 +148,14 @@ const NavBar = () => {
                     to= "/protected" 
                     activeClassName="router-link-exact-active">
                     <span className="navarrow">{">"}</span> Protected
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to= "/dashboard" 
+                    activeClassName="router-link-exact-active">
+                    <span className="navarrow">{">"}</span> Dashboard
                   </NavLink>
                 </NavItem>
             

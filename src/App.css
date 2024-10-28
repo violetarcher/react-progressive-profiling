@@ -174,3 +174,16 @@ mark {
   min-width: 70%;
   overflow: visible;
 }
+
+.tiles {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20%;
+  margin-bottom: 20rem;
+}
+
+.icons{
+  max-width: 10rem;
+  max-height:5rem;
+  margin: 1px;
+}

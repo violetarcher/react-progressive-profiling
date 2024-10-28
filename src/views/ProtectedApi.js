@@ -57,7 +57,8 @@ export const ExternalApiComponent = () => {
   const callApi = async () => {
     try {
       const token = await getAccessTokenSilently();
-
+      // const { requiredScopes } = require('express-oauth2-jwt-bearer');
+      // const checkScopes = requiredScopes('read:messages');
       const response = await fetch(`${apiOrigin}/api/private-scoped`, {
         headers: {
           Authorization: `Bearer ${token}`

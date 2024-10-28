@@ -4,11 +4,10 @@ import Highlight from "../components/Highlight";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { getConfig } from "../config";
 import Loading from "../components/Loading";
-import { NavLink as RouterNavLink } from "react-router-dom";
+// import { NavLink as RouterNavLink } from "react-router-dom";
 
 export const ExternalApiComponent = () => {
-  const { apiOrigin = "http://localhost:3001", audience } = getConfig();
-
+  const { apiOrigin = "http://localhost:3001", audience } = getConfig()
   const [state, setState] = useState({
     showResult: false,
     apiMessage: "",
@@ -85,7 +84,7 @@ export const ExternalApiComponent = () => {
     fn();
   };
 
-  const accessToken = localStorage.getItem('token')
+  // const accessToken = localStorage.getItem('token')
 
   return (
     <>
