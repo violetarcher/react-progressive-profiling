@@ -1,36 +1,33 @@
-import React, { useState } from "react";
-import { Button, Alert } from "reactstrap";
-import Highlight from "../components/Highlight";
-import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import { getConfig } from "../config";
-import Loading from "../components/Loading";
+import React, { useState } from 'react';
+import { Button, Alert } from 'reactstrap';
+import Highlight from '../components/Highlight';
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import { getConfig } from '../config';
+import Loading from '../components/Loading';
 // import { NavLink as RouterNavLink } from "react-router-dom";
 
 export const ExternalApiComponent = () => {
-  const { apiOrigin = "http://localhost:3001", audience } = getConfig()
+  const { apiOrigin = 'http://localhost:3001', audience } = getConfig();
   const [state, setState] = useState({
     showResult: false,
-    apiMessage: "",
-    error: null,
+    apiMessage: '',
+    error: null
   });
 
-  const {
-    getAccessTokenSilently,
-    loginWithPopup,
-    getAccessTokenWithPopup,
-  } = useAuth0();
+  const { getAccessTokenSilently, loginWithPopup, getAccessTokenWithPopup } =
+    useAuth0();
 
   const handleConsent = async () => {
     try {
       await getAccessTokenWithPopup();
       setState({
         ...state,
-        error: null,
+        error: null
       });
     } catch (error) {
       setState({
         ...state,
-        error: error.error,
+        error: error.error
       });
     }
 
@@ -42,12 +39,12 @@ export const ExternalApiComponent = () => {
       await loginWithPopup();
       setState({
         ...state,
-        error: null,
+        error: null
       });
     } catch (error) {
       setState({
         ...state,
-        error: error.error,
+        error: error.error
       });
     }
 
@@ -60,8 +57,8 @@ export const ExternalApiComponent = () => {
 
       const response = await fetch(`${apiOrigin}/api/external`, {
         headers: {
-          Authorization: `Bearer ${token}`,
-        },
+          Authorization: `Bearer ${token}`
+        }
       });
 
       const responseData = await response.json();
@@ -69,12 +66,12 @@ export const ExternalApiComponent = () => {
       setState({
         ...state,
         showResult: true,
-        apiMessage: responseData,
+        apiMessage: responseData
       });
     } catch (error) {
       setState({
         ...state,
-        error: error.error,
+        error: error.error
       });
     }
   };
@@ -90,9 +87,9 @@ export const ExternalApiComponent = () => {
     <>
       <div className="api-container">
         <div className="mb-5">
-          {state.error === "consent_required" && (
+          {state.error === 'consent_required' && (
             <Alert color="warning">
-              You need to{" "}
+              You need to{' '}
               <a
                 href="#/"
                 class="alert-link"
@@ -103,9 +100,9 @@ export const ExternalApiComponent = () => {
             </Alert>
           )}
 
-          {state.error === "login_required" && (
+          {state.error === 'login_required' && (
             <Alert color="warning">
-              You need to{" "}
+              You need to{' '}
               <a
                 href="#/"
                 class="alert-link"
@@ -116,9 +113,10 @@ export const ExternalApiComponent = () => {
             </Alert>
           )}
 
-          <h1>External API</h1>
+          <h1>External (FGA) API</h1>
           <p className="lead">
-            Ping an external API by clicking the button below.
+            Ping the FGA api for user store "Archfaktor" by clicking the button
+            below.
           </p>
 
           {/* <p>
@@ -131,25 +129,25 @@ export const ExternalApiComponent = () => {
           {!audience && (
             <Alert color="warning">
               <p>
-                You can't call the API at the moment because your application does
-                not have any configuration for <code>audience</code>, or it is
-                using the default value of <code>YOUR_API_IDENTIFIER</code>. You
-                might get this default value if you used the "Download Sample"
-                feature of{" "}
+                You can't call the API at the moment because your application
+                does not have any configuration for <code>audience</code>, or it
+                is using the default value of <code>YOUR_API_IDENTIFIER</code>.
+                You might get this default value if you used the "Download
+                Sample" feature of{' '}
                 <a href="https://auth0.com/docs/quickstart/spa/react">
                   the quickstart guide
                 </a>
                 , but have not set an API up in your Auth0 Tenant. You can find
-                out more information on{" "}
+                out more information on{' '}
                 <a href="https://auth0.com/docs/api">setting up APIs</a> in the
                 Auth0 Docs.
               </p>
               <p>
                 The audience is the identifier of the API that you want to call
-                (see{" "}
+                (see{' '}
                 <a href="https://auth0.com/docs/get-started/dashboard/tenant-settings#api-authorization-settings">
                   API Authorization Settings
-                </a>{" "}
+                </a>{' '}
                 for more info).
               </p>
 
@@ -162,14 +160,15 @@ export const ExternalApiComponent = () => {
                   in the <code>src/index.js</code> file
                 </li>
                 <li>
-                  by specifying it in the <code>auth_config.json</code> file (see
-                  the <code>auth_config.json.example</code> file for an example of
-                  where it should go)
+                  by specifying it in the <code>auth_config.json</code> file
+                  (see the <code>auth_config.json.example</code> file for an
+                  example of where it should go)
                 </li>
               </ul>
               <p>
                 Once you have configured the value for <code>audience</code>,
-                please restart the app and try to use the "Ping API" button below.
+                please restart the app and try to use the "Ping API" button
+                below.
               </p>
             </Alert>
           )}
@@ -183,7 +182,7 @@ export const ExternalApiComponent = () => {
             Call API
           </Button>
           <br></br>
-          
+
           {/* <Button
             tag={RouterNavLink}
             
@@ -212,5 +211,5 @@ export const ExternalApiComponent = () => {
 };
 
 export default withAuthenticationRequired(ExternalApiComponent, {
-  onRedirecting: () => <Loading />,
+  onRedirecting: () => <Loading />
 });

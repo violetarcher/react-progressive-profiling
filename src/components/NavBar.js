@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
   Collapse,
@@ -15,29 +15,23 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+  DropdownItem
+} from 'reactstrap';
 
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from '@auth0/auth0-react';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {
-    user,
-    isAuthenticated,
-    loginWithRedirect,
-    logout,
-  } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
 
   const logoutWithRedirect = () =>
     logout({
-      returnTo: window.location.origin,
+      returnTo: window.location.origin
     });
 
   return (
     <div className="nav-container">
-      
       <Navbar color="light" light expand="md">
         <Container class="nav-container-items">
           {/* <NavbarBrand className="logo" /> */}
@@ -51,7 +45,7 @@ const NavBar = () => {
                   exact
                   activeClassName="router-link-exact-active"
                 >
-                  <span className="navarrow">{">"}</span> About Us
+                  <span className="navarrow">{'>'}</span> About Us
                 </NavLink>
               </NavItem>
               {isAuthenticated && (
@@ -62,11 +56,11 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> External API
+                    <span className="navarrow">{'>'}</span> External (FGA) API
                   </NavLink>
                 </NavItem>
               )}
-            {/* Private-scoped API */}
+              {/* Private-scoped API */}
               {isAuthenticated && (
                 <NavItem>
                   <NavLink
@@ -75,7 +69,7 @@ const NavBar = () => {
                     exact
                     activeClassName="router-link-exact-active"
                   >
-                    <span className="navarrow">{">"}</span> Scoped API
+                    <span className="navarrow">{'>'}</span> Scoped API
                   </NavLink>
                 </NavItem>
               )}
@@ -94,28 +88,28 @@ const NavBar = () => {
               )} */}
               {/* find a doctor */}
               <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to={{pathname: "http://localhost:3000/"}} 
-                    target="_blank"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    <span className="navarrow">{">"}</span> Services
-                  </NavLink>
-                </NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to={{ pathname: 'http://localhost:3000/' }}
+                  target="_blank"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  <span className="navarrow">{'>'}</span> Services
+                </NavLink>
+              </NavItem>
               {/* Services*/}
               <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to={{pathname: "http://localhost:3000/"}} 
-                    target="_blank"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    <span className="navarrow">{">"}</span> Pricing
-                  </NavLink>
-                </NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to={{ pathname: 'http://localhost:3000/' }}
+                  target="_blank"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  <span className="navarrow">{'>'}</span> Pricing
+                </NavLink>
+              </NavItem>
               {/* Giving */}
               {/* <NavItem>
                   <NavLink
@@ -130,37 +124,37 @@ const NavBar = () => {
                 </NavItem> */}
               {/* Careers */}
               <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to={{pathname: "http://localhost:3000/"}} 
-                    target="_blank"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    <span className="navarrow">{">"}</span> Customers
-                  </NavLink>
-                </NavItem>
-               
-             
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to= "/protected" 
-                    activeClassName="router-link-exact-active">
-                    <span className="navarrow">{">"}</span> Protected
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to= "/dashboard" 
-                    activeClassName="router-link-exact-active">
-                    <span className="navarrow">{">"}</span> Dashboard
-                  </NavLink>
-                </NavItem>
-            
+                <NavLink
+                  tag={RouterNavLink}
+                  to={{ pathname: 'http://localhost:3000/' }}
+                  target="_blank"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  <span className="navarrow">{'>'}</span> Customers
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/protected"
+                  activeClassName="router-link-exact-active"
+                >
+                  <span className="navarrow">{'>'}</span> Protected
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/dashboard"
+                  activeClassName="router-link-exact-active"
+                >
+                  <span className="navarrow">{'>'}</span> Dashboard
+                </NavLink>
+              </NavItem>
             </Nav>
-            
+
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
@@ -214,7 +208,6 @@ const NavBar = () => {
                     block
                     onClick={() => loginWithRedirect({})}
                   >
-
                     Log in
                   </Button>
                 </NavItem>
