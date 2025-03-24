@@ -25,7 +25,7 @@ const fgaClient = new OpenFgaClient({
 
 async function checkAuthorization() {
   try {
-    const { allowed, notAllowed } = await fgaClient.check({
+    const { allowed } = await fgaClient.check({
       user: 'user:caitlyn',
       relation: 'member',
       object: 'group:accounting'
