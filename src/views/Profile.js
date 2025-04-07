@@ -1,48 +1,45 @@
-import React, { useEffect, useState }  from "react";
-import { useAuth0,  withAuthenticationRequired } from "@auth0/auth0-react";
+import React, { useEffect, useState } from 'react';
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from 'reactstrap';
 // import Highlight from 'react-highlight'
-import Loading from "../components/Loading";
-
+import Loading from '../components/Loading';
 
 export const ProfileComponent = () => {
   const { user, getAccessTokenSilently } = useAuth0();
   const [setUserMetadata] = useState(null);
-   
-   
-   useEffect(() => {
+
+  useEffect(() => {
     const getUserMetadata = async () => {
-    const domain = "archfaktor.us.auth0.com";
-    
-    try {
-      const accessToken = await getAccessTokenSilently({
-        audience: `https://${domain}/api/v2/`,
-        scope: "read:current_user", 
-        // acr_values: 'http://schemas.openid.net/pape/policies/2007/06/multi-factor',
-      });
+      const domain = 'archfaktor.us.auth0.com';
 
-      const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+      try {
+        const accessToken = await getAccessTokenSilently({
+          audience: `https://${domain}/api/v2/`,
+          scope: 'read:current_user'
+          // acr_values: 'http://schemas.openid.net/pape/policies/2007/06/multi-factor',
+        });
 
-      const metadataResponse = await fetch(userDetailsByIdUrl, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
 
-      const { user_metadata } = await metadataResponse.json();
+        const metadataResponse = await fetch(userDetailsByIdUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        });
 
-      setUserMetadata(user_metadata);
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
-  
-  getUserMetadata();
-}, [getAccessTokenSilently, setUserMetadata, user.sub]);
+        const { user_metadata } = await metadataResponse.json();
+
+        setUserMetadata(user_metadata);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    getUserMetadata();
+  }, [getAccessTokenSilently, setUserMetadata, user.sub]);
 
   return (
- 
     <Container className="mb-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md={2}>
@@ -57,21 +54,20 @@ export const ProfileComponent = () => {
           <p className="lead text-muted">{user.email}</p>
         </Col>
       </Row>
-    
-    <div className="container-claims">
-      
-      <Row>
-        <mark>
-         <div >
-          <h3>ID Token</h3>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
-          </div> 
-        </mark>
-      </Row>
 
-      <br></br>
+      <div className="container-claims">
+        <Row>
+          <mark>
+            <div>
+              <h3>ID Token</h3>
+              <pre>{JSON.stringify(user, null, 2)}</pre>
+            </div>
+          </mark>
+        </Row>
 
-      {/* <Row>
+        <br></br>
+
+        {/* <Row>
         <mark>
          <div >
           <h3>Access Token</h3>
@@ -80,10 +76,10 @@ export const ProfileComponent = () => {
         </mark>
       </Row> */}
 
-      <br></br>
+        <br></br>
 
-{/* uncomment to render user Metadata from silend API call, must also uncommend issuer and scope in index.js */}
-      {/* <Row>
+        {/* uncomment to render user Metadata from silend API call, must also uncommend issuer and scope in index.js */}
+        {/* <Row>
         <mark>
         <div>
           <h3>User Metadata</h3>
@@ -95,13 +91,11 @@ export const ProfileComponent = () => {
         </div>
         </mark>
       </Row> */}
-          
-    </div>
+      </div>
     </Container>
   );
 };
 
 export default withAuthenticationRequired(ProfileComponent, {
-  onRedirecting: () => <Loading />,
+  onRedirecting: () => <Loading />
 });
-

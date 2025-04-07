@@ -26,6 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^6.1.5",
+    "@openfga/sdk": "^0.8.0",
     "@progress/kendo-react-layout": "^8.5.0",
     "autoprefixer": "^10.4.5",
     "axios": "^1.7.7",
