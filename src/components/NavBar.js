@@ -87,7 +87,7 @@ const NavBar = () => {
                 </NavItem>
               )} */}
               {/* find a doctor */}
-              <NavItem>
+              {/* <NavItem>
                 <NavLink
                   tag={RouterNavLink}
                   to={{ pathname: 'http://localhost:3000/' }}
@@ -97,9 +97,9 @@ const NavBar = () => {
                 >
                   <span className="navarrow">{'>'}</span> Services
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               {/* Services*/}
-              <NavItem>
+              {/* <NavItem>
                 <NavLink
                   tag={RouterNavLink}
                   to={{ pathname: 'http://localhost:3000/' }}
@@ -109,7 +109,7 @@ const NavBar = () => {
                 >
                   <span className="navarrow">{'>'}</span> Pricing
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               {/* Giving */}
               {/* <NavItem>
                   <NavLink
