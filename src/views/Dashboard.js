@@ -62,8 +62,7 @@ const Dashboard = () => {
         <CardActionArea
           component={Link}
           to={{
-            pathname:
-              'https://archfaktor.us.auth0.com/samlp/K5LK8sweH1lefBDCH67ZooYlS5Nc9vLe'
+            pathname: 'http://localhost:3009'
           }}
           target="_blank"
           style={{ textDecoration: 'none' }}
@@ -71,8 +70,8 @@ const Dashboard = () => {
           <CardContent>
             <img
               className="icons"
-              src="https://auth0images.s3.us-east-2.amazonaws.com/auth0logo.png"
-              alt={'auth0byokta logo'}
+              src="https://auth0images.s3.us-east-2.amazonaws.com/genai.png"
+              alt={'genaiauth0 logo'}
             />
             <Typography
               gutterBottom
@@ -80,7 +79,7 @@ const Dashboard = () => {
               component="div"
               href="google.com"
             >
-              SaaS App
+              Auth for GenAI
             </Typography>
           </CardContent>
         </CardActionArea>
